@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  database:
+    image: mysql:8
+    volumes:
+      - database_data:/var/lib/mysql
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+  web:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    command: ./wait-for-it.sh database:3306 -- python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./project:/app
+
+volumes:
+  database_data:
