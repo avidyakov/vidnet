@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 
 class Tag(models.Model):
@@ -22,3 +23,6 @@ class User(AbstractUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+
+    def get_absolute_url(self):
+        return reverse('user:profile', args=(self.pk,))
