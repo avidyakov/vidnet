@@ -17,6 +17,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+
+    'main_app.apps.MainAppConfig',
     'user_app.apps.UserAppConfig',
     'auth_app.apps.AuthAppConfig',
     'friends_app.apps.FriendsAppConfig',
@@ -89,3 +92,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user_app.User'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
