@@ -1,10 +1,5 @@
 version: "2"
 
-x-app_environment: &app_environment
-  restart: unless-stopped
-  env_file:
-    - .env
-
 services:
   database:
     image: mysql:8
@@ -12,7 +7,9 @@ services:
       - database_data:/var/lib/mysql
     ports:
       - "3306:3306"
-    <<: *app_environment
+    restart: unless-stopped
+    env_file:
+      - .env
   web:
     build:
       context: .
@@ -23,7 +20,9 @@ services:
       - ./project:/app:cached
     entrypoint: ./wait-for-it.sh database:3306 -- ./entrypoint.sh
     command: python manage.py runserver 0.0.0.0:8000
-    <<: *app_environment
+    restart: unless-stopped
+    env_file:
+      - .env
 
 volumes:
   database_data:
