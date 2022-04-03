@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 
 x-app_environment: &app_environment
   restart: unless-stopped
