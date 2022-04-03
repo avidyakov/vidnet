@@ -21,15 +21,15 @@ jobs:
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1.3
         with:
-          envkey_SECRET_KEY: django-insecure-(85&ep&u-*dgyh08zl95(6fjvli_0yi8s02qg!-j1bsma$+s2#
-          envkey_DEBUG: 1
+          envkey_SECRET_KEY: "django-insecure-(85&ep&u-*dgyh08zl95(6fjvli_0yi8s02qg!-j1bsma$+s2#"
+          envkey_DEBUG: "1"
           envkey_ALLOWED_HOSTS: "*"
-          envkey_DATABASE: db
-          envkey_USER: user
-          envkey_PASSWORD: password
-          envkey_MYSQL_ROOT_PASSWORD: password
-          envkey_HOST: database
-          envkey_PORT: 3306
+          envkey_DATABASE: "db"
+          envkey_USER: "user"
+          envkey_PASSWORD: "password"
+          envkey_MYSQL_ROOT_PASSWORD: "password"
+          envkey_HOST: "database"
+          envkey_PORT: "3306"
           directory: ~/vidnet
       - name: Deploy
         uses: appleboy/ssh-action@master
