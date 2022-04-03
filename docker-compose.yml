@@ -17,11 +17,12 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: ./wait-for-it.sh database:3306 -- python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:
       - ./project:/app:cached
+    entrypoint: ./wait-for-it.sh database:3306 -- ./entrypoint.sh
+    command: python manage.py runserver 0.0.0.0:8000
     <<: *app_environment
 
 volumes:

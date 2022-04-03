@@ -7,5 +7,5 @@ WORKDIR /app
 
 RUN pip3 install poetry
 
-COPY poetry.lock pyproject.toml ./
+COPY poetry.lock pyproject.toml project/entrypoint.sh ./
 RUN poetry install --no-interaction --no-ansi
