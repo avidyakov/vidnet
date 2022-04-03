@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     'main_app.apps.MainAppConfig',
     'user_app.apps.UserAppConfig',
     'auth_app.apps.AuthAppConfig',
-    'friends_app.apps.FriendsAppConfig',
 ]
 
 MIDDLEWARE = [
