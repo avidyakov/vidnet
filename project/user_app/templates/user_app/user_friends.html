@@ -8,18 +8,15 @@
                     {% for object in object_list %}
                         <div class="nearby-user">
                             <div class="row">
-                                <div class="col-md-2 col-sm-2">
+                                <div class="col-md-4 col-sm-3">
                                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="user"
                                          class="profile-photo-lg">
                                 </div>
-                                <div class="col-md-7 col-sm-7">
+                                <div class="col-md-8 col-sm-7">
                                     <h5><a href="{% url 'user:profile' object.pk %}"
-                                           class="profile-link">{{ object.get_full_naem }}</a></h5>
+                                           class="profile-link">{{ object.get_full_name }}</a></h5>
                                     <p>{{ object.email }}</p>
                                     <p class="text-muted">{{ object.city.name }}</p>
-                                </div>
-                                <div class="col-md-3 col-sm-3">
-                                    <button class="btn btn-primary pull-right">Add Friend</button>
                                 </div>
                             </div>
                         </div>
